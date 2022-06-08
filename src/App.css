@@ -1,38 +1,88 @@
 .App {
   text-align: center;
-}
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
+  min-height: 100vh;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  overflow: hidden;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column;
+  background-color: #565656;
+  width: 550px;
+  height: 300px;
+  border-radius: 10px;
+}
+
+.headerText {
+  color: #e5e5e5;
+  margin: 0px 0px 20px 0px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.textFields {
+  background-color: #494949;
+  color: #e5e5e5;
+  text-align: center;
+  border-radius: 5px;
+  border: none;
+  width: 400px;
+  height: 40px;
+  margin-bottom: 10px;
+}
+
+.textFields:focus {
+  outline: none;
+  border:0.8px solid #e5e5e5;
+  
+}
+
+.textFields::placeholder {
+  color: #acacac;
+}
+
+.textFields:focus::placeholder {
+  color: transparent;
+}
+
+.buttonFields {
+  background-color: #8e3b4b;
+  color: #e6e6e6;
+  border: none; 
+  width: 405px;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.buttonFields:hover {
+  border: 0.8px solid #ffffff;
+}
+
+.buttonFields:active {
+  background-color: #662834;
+}
+
+.successfulReg {
+  background-color: #32bf66;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  font-weight: 400;
+  font-size: 14px;
+  width: 550px;
+  height: 35px;
+  margin-bottom: 15px;
+  border-radius: 5px 5px 0px 0px;
+  padding-top: 10px;
+  text-align: center;
 }
