@@ -75,14 +75,21 @@
 }
 
 .successfulReg {
-  background-color: #32bf66;
+  background-color: #34be66;
   color: white;
   font-weight: 400;
   font-size: 14px;
   width: 550px;
-  height: 35px;
+  height: 30px;
   margin-bottom: 15px;
   border-radius: 5px 5px 0px 0px;
-  padding-top: 10px;
+  padding-top: 5px;
   text-align: center;
+}
+
+span {
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  color: #dfa7b2;
 }

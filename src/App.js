@@ -8,6 +8,7 @@ function App() {
     email: ''
   })
   const [success, setSuccess] = useState(false)
+  const [valid, setValid] = useState(false)
 
   const HandleFirstName = (firstNameValue) => {
     setValues({...values, firstName: firstNameValue})
@@ -23,44 +24,47 @@ function App() {
 
   const HandleSubmit = (e) => {
     e.preventDefault();
+
+    if (values.firstName && values.lastName && values.email) {
+      setValid(true);
+    }
     setSuccess(true);
   }
 
   return (
     <div className='App'>
       <form className='formContainer' onSubmit={(e) => HandleSubmit(e)}>
-        {success ? <div className='successfulReg'>Success!</div> : null }
+        {success && valid ? <div className='successfulReg'>Success!</div> : null }
         <h2 className='headerText'>Basic Registration Form</h2>
+        {success && !values.firstName ? <span>Please enter a first name</span> : null}
         <input 
           onChange={(e) => HandleFirstName(e.target.value)} 
           className="textFields" 
           value={values.firstName} 
           type="text" 
           placeholder="First Name" 
-          name='firstName'
-        ></input>
+          name='firstName' />
+        {success && !values.lastName ? <span>Please enter a last name</span> : null}
         <input
           onChange={(e) => HandleLastName(e.target.value)} 
           className="textFields" 
           value={values.lastName} 
           type="text" 
           placeholder="Last Name" 
-          name='lastName'
-        ></input>
+          name='lastName' />
+        {success && !values.email ? <span>Please enter an email address</span> : null}
         <input
           onChange={(e) => HandleEmail(e.target.value)} 
           className="textFields" 
           value={values.email} 
           type="text" 
           placeholder="Email" 
-          name='email'
-        ></input>
+          name='email' />
         <input 
           className="buttonFields" 
           type="submit" 
           value="Register" 
-          name='submit'
-        ></input>
+          name='submit' />
       </form>
     </div>
   );
